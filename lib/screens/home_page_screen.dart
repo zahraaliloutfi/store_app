@@ -37,10 +37,10 @@ class HomePage extends StatelessWidget {
                   if (snapshot.hasData) {
                     List<ProductModel> products = snapshot.data!;
                     return GridView.builder(
-                      itemCount: products.length,
+                        itemCount: products.length,
                         clipBehavior: Clip.none,
                         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                            //colums number
+                          //colums number
                             crossAxisCount: 2,
                             //w / h
                             childAspectRatio: 1.5,
@@ -50,9 +50,7 @@ class HomePage extends StatelessWidget {
                           return CustomCard(product: products[index],);
                         });
                   }
-                  else {
-                    return Center(child: CircularProgressIndicator());
-                  }
+                  else throw Exception('error ${snapshot.error}');
                 })));
   }
 }

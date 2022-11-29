@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:store_app/api/model/product_model.dart';
 
 class CustomCard extends StatelessWidget {
-   CustomCard({required this.product, Key? key}) : super(key: key);
+  CustomCard({required this.product, Key? key}) : super(key: key);
   ProductModel product;
 
   @override
@@ -30,7 +30,7 @@ class CustomCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'HandBag lv',
+                    '${product.title}',
                     style: TextStyle(
                         color: Colors.grey,
                         fontSize: 16,
@@ -42,7 +42,7 @@ class CustomCard extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(r'$225',
+                      Text('${product.price}',
                           style: TextStyle(
                               color: Colors.black,
                               fontSize: 16,

@@ -1,6 +1,6 @@
 class RatingModel {
   final int count;
-  final double rate;
+  final int rate;
 
   RatingModel({required this.count, required this.rate});
 

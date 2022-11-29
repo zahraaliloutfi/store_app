@@ -7,9 +7,9 @@ class ProductModel {
   final int id;
   final String title;
   final String description;
-  final double price;
+  final dynamic price;
   final String image;
-  final RatingModel rating;
+  // final RatingModel rating;
 
   ProductModel(
       {required this.id,
@@ -17,7 +17,8 @@ class ProductModel {
       required this.price,
       required this.description,
       required this.image,
-      required this.rating});
+      });
+  // required this.rating
 
 //كل ما اقابل ماب اعاملها علي انها مودل و اعملها في كلاس
 //لازم اعمل factory contructor بدل ما انا هجيب مودل من النت
@@ -29,7 +30,8 @@ class ProductModel {
         price: jsonData['price'],
         description: jsonData['description'],
         image: jsonData['image'],
-        rating: RatingModel.fromjson(jsonData['rating']));
+       );
+    // rating: RatingModel.fromjson(jsonData['rating'])
   }
 }
 
