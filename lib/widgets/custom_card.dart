@@ -10,7 +10,7 @@ class CustomCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       clipBehavior: Clip.none,
-//الاستاك بيحط الويدجتس فوق بعض يعني اول ويدجت تحت و بعدين و الويدجت ال وراها تبقي فوقيها
+//الاستاك بيحط الويدجتس فوق بعض يعني اول ويدجت تحت و بعدين  الويدجت ال وراها تبقي فوقيها
       children: [
         Container(
           decoration: BoxDecoration(boxShadow: [
@@ -30,7 +30,7 @@ class CustomCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    '${product.title}',
+                    '${product.title.substring(0,6)}',//first 6 characters
                     style: TextStyle(
                         color: Colors.grey,
                         fontSize: 16,
@@ -42,7 +42,8 @@ class CustomCard extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text('${product.price}',
+                      //r'$''${product.price.toString()}'
+                      Text(product.price.toString(),
                           style: TextStyle(
                               color: Colors.black,
                               fontSize: 16,
@@ -65,6 +66,7 @@ class CustomCard extends StatelessWidget {
             child: Image.network(
               product.image,
               height: 90,
+              width: 90,
             )),
       ],
     );

@@ -1,10 +1,11 @@
 import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
-//get requist , add(post) , delete , update(put) .
+//get request , add(post) , delete , update(put) .
 //@required == optional
-//required == not optional needed
+//required == not optional == needed
 class Api {
+  //get request
   Future<dynamic> get({required String url, @required dynamic body, @required String? token}) async
   {    Map<String, String> headers = {};
   headers.addAll({
@@ -26,7 +27,7 @@ class Api {
     }
   }
 
-//add requist
+//add request
   Future<dynamic> post(
       {required String url,
       @required dynamic body,
@@ -49,7 +50,7 @@ class Api {
     }
   }
 
-  //put or update requist
+  //put or update request
   Future<dynamic> put(
       {required String url,
         @required dynamic body,
@@ -74,8 +75,4 @@ class Api {
           'there is a problem status code${response.statusCode} check it in body ${jsonDecode(response.body)}');
     }
   }
-
-
-
-
 }
